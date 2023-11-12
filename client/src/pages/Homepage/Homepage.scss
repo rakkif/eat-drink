@@ -1,0 +1,20 @@
+.body-homepage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #f1e3c5;
+}
+
+.nav {
+  display: flex;
+  margin-top: 18.75rem;
+  justify-content: center;
+
+  &__link {
+    padding-right: 0.75rem;
+    text-decoration: none;
+    color: black;
+  }
+}
