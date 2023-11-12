@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./Eat.scss";
 import List from "../../components/List/List";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "http://localhost:5000";
 
 const Eat = () => {
   const [eatList, setEatList] = useState([]);

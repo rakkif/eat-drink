@@ -4,7 +4,7 @@ import List from "../../components/List/List";
 import { useEffect, useState } from "react";
 import "./Coffee.scss";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "http://localhost:5000";
 
 const Coffee = () => {
   const [coffeeList, setCoffeeList] = useState([]);
