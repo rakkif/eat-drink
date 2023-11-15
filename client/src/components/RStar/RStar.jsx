@@ -1,7 +1,21 @@
 import React from "react";
 import heart from "../../assets/heart.png";
 import { styled } from "styled-components";
-// import { GlobalStyles } from "../styles/Global";
+
+const RStar = ({ stars }) => {
+  const isWholeNum = (n) => {
+    var result = n - Math.floor(n) !== 0;
+    if (result) return false;
+    else return true;
+  };
+
+  return (
+    <StyledContainer>
+      <Heart src={heart}></Heart>
+      <StarValue isWhole={isWholeNum(stars)}>{stars}</StarValue>
+    </StyledContainer>
+  );
+};
 
 const Heart = styled.img`
   position: absolute;
@@ -21,20 +35,5 @@ const StarValue = styled.div`
   opacity: 0.5;
   font-size: medium;
 `;
-
-const RStar = ({ stars }) => {
-  const isWholeNum = (n) => {
-    var result = n - Math.floor(n) !== 0;
-    if (result) return false;
-    else return true;
-  };
-
-  return (
-    <StyledContainer>
-      <Heart src={heart}></Heart>
-      <StarValue isWhole={isWholeNum(stars)}>{stars}</StarValue>
-    </StyledContainer>
-  );
-};
 
 export default RStar;
