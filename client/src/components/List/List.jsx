@@ -1,7 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
-// import RStar from "../RStar/RStar";
-// import { GlobalStyles } from "../styles/Global";
+import RStar from "../RStar/RStar";
 
 const StyledList = styled.div`
   font-family: "Roboto Condensed", sans-serif;
@@ -23,6 +22,15 @@ const StyledList = styled.div`
 const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  div {
+    display: none;
+  }
+  &:hover {
+    div {
+      display: block;
+    }
+  }
 `;
 const StyledListItem = styled.div`
   margin: 0rem;
@@ -43,21 +51,21 @@ const StyledListItem = styled.div`
 
 const List = ({ itemsList }) => {
   return (
-    // <GlobalStyles>
     <StyledList>
       {itemsList?.map((item) => (
         <>
           <StyledListItem>
-            {/* <FlexRow> */}
-            {item.name}
-            {/* <RStar stars={item.r_star} /> */}
-            {/* </FlexRow> */}
+            <FlexRow>
+              {item.name}
+              <div>
+                <RStar stars={item.r_star} />
+              </div>
+            </FlexRow>
             <hr />
           </StyledListItem>
         </>
       ))}
     </StyledList>
-    // </GlobalStyles>
   );
 };
 

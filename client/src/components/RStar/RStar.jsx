@@ -15,18 +15,24 @@ const StyledContainer = styled.div`
 
 const StarValue = styled.div`
   z-index: 10;
-  top: 0;
-  left: 0;
+  padding-left: ${({ isWhole }) => (isWhole ? "15px" : "10px")};
+  padding-top: 12px;
   color: white;
-  opacity: 0.7;
-  font-size: large;
+  opacity: 0.5;
+  font-size: medium;
 `;
 
 const RStar = ({ stars }) => {
+  const isWholeNum = (n) => {
+    var result = n - Math.floor(n) !== 0;
+    if (result) return false;
+    else return true;
+  };
+
   return (
     <StyledContainer>
       <Heart src={heart}></Heart>
-      <StarValue>{stars}</StarValue>
+      <StarValue isWhole={isWholeNum(stars)}>{stars}</StarValue>
     </StyledContainer>
   );
 };
