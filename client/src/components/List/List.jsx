@@ -1,6 +1,8 @@
 import React from "react";
 import { styled } from "styled-components";
 import RStar from "../RStar/RStar";
+import Underline from "../Underline/Underline";
+import AddItem from "../AddItem/AddItem";
 
 const List = ({ itemsList }) => {
   return (
@@ -14,10 +16,11 @@ const List = ({ itemsList }) => {
                 <RStar stars={item.r_star} />
               </div>
             </FlexRow>
-            <hr />
+            <Underline />
           </StyledListItem>
         </>
       ))}
+      <AddItem />
     </StyledList>
   );
 };
@@ -59,13 +62,6 @@ const StyledListItem = styled.div`
     hr {
       background-color: ${({ theme }) => theme.colors.primary};
     }
-  }
-  hr {
-    height: 0.313rem;
-    border: none;
-    margin: ${({ theme }) => theme.spacing.s0};
-    padding-left: ${({ theme }) => theme.spacing.s5};
-    background-color: ${({ theme }) => theme.colors.primary};
   }
 `;
 

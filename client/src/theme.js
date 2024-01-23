@@ -10,6 +10,7 @@ const theme = {
     xlg: "900",
   },
   fontSize: {
+    s: "1.5rem",
     m: "2.5rem",
   },
   spacing: {

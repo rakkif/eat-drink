@@ -25,13 +25,13 @@ router.get("/coffee", (req, res) => {
 router.get("/:id", (req, res) => {
   Resto.findById(req.params.id)
     .then((resto) => res.json(resto))
-    .catch((err) => res.status(404).json({ norestosfound: "No Book found" }));
+    .catch((err) => res.status(404).json({ norestosfound: "No I can't" }));
 });
 
 router.post("/", (req, res) => {
   Resto.create(req.body)
-    .then((book) => res.json({ msg: "Book added successfully" }))
-    .catch((err) => res.status(400).json({ error: "Unable to add this book" }));
+    .then((book) => res.json({ msg: "Place added successfuly" }))
+    .catch((err) => res.status(400).json({ error: "I can't do it" }));
 });
 
 module.exports = router;
